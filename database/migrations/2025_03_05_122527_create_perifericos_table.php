@@ -12,23 +12,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('perifericos', function (Blueprint $table) {
+        Schema::create('productos', function (Blueprint $table) {
             $table->id();
             $table->string('Nombre');
             $table->string('Descripcion');
-            $table->binary('Imagen')->nullable();
             $table->integer('Precio');
             $table->timestamps();
         });
-        FacadesDB::statement('ALTER TABLE perifericos MODIFY COLUMN Imagen LONGBLOB');
 
     }
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('perifericos');
-    }
+    
 };

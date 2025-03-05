@@ -6,12 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Periferico extends Model
 {
-    protected $table = 'perifericos';
+    protected $table = 'productos';
 
     protected $fillable = [
         'Nombre',
         'Descripcion',
-        'Imagen',
         'Precio'
     ];
 }

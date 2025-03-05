@@ -25,7 +25,7 @@ class perifericoController extends Controller
     }
 
     return response()->json([
-        'perifericos' => $perifericos,
+        'productos' => $perifericos,
         'status' => 200
     ], 200);
 }
@@ -43,7 +43,7 @@ class perifericoController extends Controller
         $perifericoExistente = Periferico::where('Nombre', $request->Nombre)->first();
     
         if ($perifericoExistente) {
-            return response()->json(['message' => 'El periférico ya existe', 'periferico' => $perifericoExistente], 200);
+            return response()->json(['message' => 'El periférico ya existe', 'producto' => $perifericoExistente], 200);
         }
     
         $periferico = Periferico::create([
@@ -56,7 +56,7 @@ class perifericoController extends Controller
             return response()->json(['message' => 'Error al crear el periférico']);
         }
     
-        return response()->json(['periferico' => $periferico], 201);
+        return response()->json(['producto' => $periferico], 201);
     }
     
     public function show($id){
@@ -70,7 +70,7 @@ class perifericoController extends Controller
         }
 
         $data = [
-            'periferico' => $periferico,
+            'producto' => $periferico,
             'status' => 200
         ];
 
@@ -132,7 +132,7 @@ class perifericoController extends Controller
             
             return response()->json([
                 'message' => 'No se necesita actualización, los datos ya están al día',
-                'periferico' => $periferico,
+                'producto' => $periferico,
                 'status' => 200
             ]);
         }
@@ -145,7 +145,7 @@ class perifericoController extends Controller
     
         $data = [
             'message' => 'Periférico actualizado',
-            'periferico' => $periferico,
+            'producto' => $periferico,
             'status' => 200
         ];
     
@@ -196,7 +196,7 @@ class perifericoController extends Controller
         if ($esIgual) {
             return response()->json([
                 'message' => 'No se necesita actualización, los datos ya están al día',
-                'periferico' => $periferico,
+                'producto' => $periferico,
                 'status' => 200
             ]);
         }
@@ -205,7 +205,7 @@ class perifericoController extends Controller
     
         $data = [
             'message' => 'Periferico actualizado',
-            'periferico' => $periferico,
+            'producto' => $periferico,
             'status' => 200
         ];
     
